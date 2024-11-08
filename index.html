@@ -6,8 +6,70 @@
     <link rel="stylesheet" href="index.css">
     <title>FAKE STORE API</title>
 </head>
-<body>
-<h1>Hello World</h1>
+<body class="bg-gray-100 flex items-center flex-col text-blue-700 justify-center min-h-screen">
+<h1 class="text-4xl text-center">Products Api From Fake Store Api</h1>
+
+<div class="w-full max-w-md p-5 mt-24 mb-24 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Add New Product</h2>
+    <form id="productForm" class="space-y-4">
+        <div>
+            <label for="title" class="block text-sm font-medium text-gray-700">Product Title</label>
+            <input type="text" id="title" name="title" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+        </div>
+        <div>
+            <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+            <input type="number" id="price" name="price" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+        </div>
+        <div>
+            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+            <textarea id="description" name="description" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required></textarea>
+        </div>
+        <div>
+            <label for="image" class="block text-sm font-medium text-gray-700">Image URL</label>
+            <input type="text" id="image" name="image" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+        </div>
+        <div>
+            <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+            <input type="text" id="category" name="category" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+        </div>
+        <button type="submit" class="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">Add Product</button>
+    </form>
+</div>
+
+<div id="updateModal" class="fixed inset-0 z-10 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Update Product</h2>
+        <form id="updateForm" class="space-y-4">
+            <input type="hidden" id="updateProductId">
+            <!-- Form fields for title, price, description, image, and category -->
+            <div>
+                <label for="updateTitle" class="block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" id="updateTitle" class="mt-1 block w-full px-3 py-2 border rounded-md" required>
+            </div>
+            <div>
+                <label for="updatePrice" class="block text-sm font-medium text-gray-700">Price</label>
+                <input type="number" id="updatePrice" class="mt-1 block w-full px-3 py-2 border rounded-md" required>
+            </div>
+            <div>
+                <label for="updateDescription" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea id="updateDescription" rows="3" class="mt-1 block w-full px-3 py-2 border rounded-md" required></textarea>
+            </div>
+            <div>
+                <label for="updateImage" class="block text-sm font-medium text-gray-700">Image URL</label>
+                <input type="text" id="updateImage" class="mt-1 block w-full px-3 py-2 border rounded-md" required>
+            </div>
+            <div>
+                <label for="updateCategory" class="block text-sm font-medium text-gray-700">Category</label>
+                <input type="text" id="updateCategory" class="mt-1 block w-full px-3 py-2 border rounded-md" required>
+            </div>
+            <button type="submit" class="w-full py-2 bg-green-500 text-white rounded-md">Update Product</button>
+        </form>
+    </div>
+</div>
+
+<div id="product-container" class="flex flex-wrap">
+
+</div>
 
 <script src="index.js"></script>
 </body>
